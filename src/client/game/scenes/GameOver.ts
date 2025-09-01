@@ -7,13 +7,13 @@ interface GameOverData {
 }
 
 export class GameOver extends Scene {
-  camera: Phaser.Cameras.Scene2D.Camera;
-  background: Phaser.GameObjects.Image;
-  gameOverText: Phaser.GameObjects.Text;
-  scoreText: Phaser.GameObjects.Text;
-  highScoreText: Phaser.GameObjects.Text;
-  restartText: Phaser.GameObjects.Text;
-  menuText: Phaser.GameObjects.Text;
+  private camera: Phaser.Cameras.Scene2D.Camera;
+  private background: Phaser.GameObjects.Image;
+  private gameOverText: Phaser.GameObjects.Text;
+  private scoreText: Phaser.GameObjects.Text;
+  private highScoreText: Phaser.GameObjects.Text;
+  private restartText: Phaser.GameObjects.Text;
+  private menuText: Phaser.GameObjects.Text;
 
   constructor() {
     super('GameOver');
@@ -40,7 +40,6 @@ export class GameOver extends Scene {
         stroke: '#000000',
         strokeThickness: 4,
         align: 'center'
-        align: 'center',
       })
       .setOrigin(0.5);
 

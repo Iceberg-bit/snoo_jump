@@ -81,7 +81,7 @@ export class DoodleGame extends Scene {
       color: '#FFFFFF',
       stroke: '#000000',
       strokeThickness: 2
-    }).setOrigin(1, 0);
+    }).setOrigin(1, 0).setScrollFactor(0);
 
     this.highScoreText = this.add.text(width - 20, 60, `High: ${this.highScore}`, {
       fontFamily: 'Arial',
@@ -89,7 +89,7 @@ export class DoodleGame extends Scene {
       color: '#FFD700',
       stroke: '#000000',
       strokeThickness: 2
-    }).setOrigin(1, 0);
+    }).setOrigin(1, 0).setScrollFactor(0);
   }
 
   private createInitialPlatforms() {
@@ -430,23 +430,5 @@ export class DoodleGame extends Scene {
     if (this.highScoreText) {
       this.highScoreText.setPosition(width - 20, 60);
     }
-  }
-
-  update() {
-    // Check if player fell too far
-    if (this.player.y > this.cameraY + this.gameHeight + 200) {
-      this.gameOver();
-      return;
-    }
-
-    this.handleInput();
-    this.updatePlayer();
-    this.updatePlatforms();
-    this.updateEnemies();
-    this.updateCamera();
-    this.checkCollisions();
-    this.updateInvincibility();
-    this.generateNewContent();
-    this.cleanupOldObjects();
   }
 }
